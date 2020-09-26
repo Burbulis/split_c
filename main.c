@@ -32,7 +32,7 @@ void main (void)
   
   unsigned int count_ = split(str," ,.-");
   printf ("total parts of string:%d\n",count_);
-  char *out_;
+  char *out_string;
   get_by_index(4,&out_string); 
   printf("test::%s\n",out_string);
 
