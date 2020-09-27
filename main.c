@@ -15,9 +15,10 @@ unsigned int  split(char *str,char *tokens)
     {
       list_init(token,sz_);
     }
+    else{
     list_add();
     list_next(token,sz_);
-
+    }
     token = strtok(NULL, " ,.-");
 
   }while (token != NULL);
@@ -32,9 +33,11 @@ void main (void)
   
   unsigned int count_ = split(str," ,.-");
   printf ("total parts of string:%d\n",count_);
-  char *out_string;
-  get_by_index(4,&out_string); 
-  printf("test::%s\n",out_string);
-
+ for (unsigned int i = 0 ; i < (count_ + 1) ; i++)
+ {
+   char *out_string;
+   get_by_index(i,&out_string); 
+   printf("test::%s\n",out_string);
+ }
 }
 

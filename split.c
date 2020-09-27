@@ -9,7 +9,7 @@
 unsigned int  split(char *str,char *tokens)
 {
   char *token;
-  token = strtok (str,tokens/*" ,.-"*/);
+  //token = strtok (str,tokens/*" ,.-"*/);
   do 
   {
     unsigned int sz_ = (unsigned int)strlen(token);
@@ -17,9 +17,11 @@ unsigned int  split(char *str,char *tokens)
     {
       list_init(token,sz_);
     }
-    list_add();
-    list_next(token,sz_);
-
+    else
+    {
+      list_add();
+      list_next(token,sz_);
+    }
     token = strtok(NULL, " ,.-");
 
   }while (token != NULL);
